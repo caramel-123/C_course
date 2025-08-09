@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>  // for rand() and srand()
+#include <time.h>    // for time()
+
+int main() {
+    int guess, secretNumber;
+
+    // Generate a random number between 1 and 10
+    srand(time(0));
+    secretNumber = (rand() % 10) + 1;
+
+    printf("🎯 Guess the number (between 1 and 10): ");
+    scanf("%d", &guess);
+
+    if (guess == secretNumber) {
+        printf("🎉 Congratulations! You guessed it right!\n");
+    } else {
+        printf("❌ Oops! The correct number was %d. Try again!\n", secretNumber);
+    }
+
+    return 0;
+}
+
